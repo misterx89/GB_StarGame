@@ -8,21 +8,19 @@ import com.badlogic.gdx.utils.ScreenUtils;
 
 public class StarGame extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img, BG;
+	Texture img;
 
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		BG = new Texture("badlogic.jpg");
 	}
 
 	@Override
 	public void render () {
 		ScreenUtils.clear(1, 0, 0, 1);
 		batch.begin();
-		batch.draw(BG,0,0, Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		batch.draw(img, 0, 0);
 		batch.end();
 	}
@@ -31,6 +29,5 @@ public class StarGame extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
-		BG.dispose();
 	}
 }
